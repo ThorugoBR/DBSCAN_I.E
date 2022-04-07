@@ -36,7 +36,7 @@ sns.scatterplot(data=two_blobs,x='X1',y='X2',palette='viridis')
 
     <AxesSubplot:xlabel='X1', ylabel='X2'>
 
-> ![png](output_6_1.png)
+> ![png](./imgs/output_6_1.png)
 
 ```python
 # plt.figure(figsize=(10,6),dpi=200)
@@ -46,7 +46,7 @@ sns.scatterplot(data=two_blobs_outliers,x='X1',y='X2',palette='viridis')
 
     <AxesSubplot:xlabel='X1', ylabel='X2'>
 
-> ![png](output_7_1.png)
+> ![png](./imgs/output_7_1.png)
 
 ## Label Discovery
 
@@ -132,14 +132,14 @@ Std_Vis_Plot()
 display_categories(dbscan,two_blobs)
 ```
 
-> ![png](output_14_0.png)
+> ![png](./imgs/output_14_0.png)
 
 ```python
 Std_Vis_Plot()
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-> ![png](output_15_0.png)
+> ![png](./imgs/output_15_0.png)
 
 # Epsilon
 
@@ -157,7 +157,7 @@ dbscan = DBSCAN(eps=0.001)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-> ![png](output_17_0.png)
+> ![png](./imgs/output_17_0.png)
 
 ```python
 # Huge Epsilon --> Huge Max Distance --> Everything is in the same cluster (class=0)
@@ -166,7 +166,7 @@ dbscan = DBSCAN(eps=10)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-> ![png](output_18_0.png)
+> ![png](./imgs/output_18_0.png)
 
 ```python
 # How to find a good epsilon?
@@ -175,7 +175,7 @@ dbscan = DBSCAN(eps=1)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-> ![png](output_19_0.png)
+> ![png](./imgs/output_19_0.png)
 
 ```python
 print(f'Percentage of outliers = {np.round(100 * np.sum(dbscan.labels_ == -1) / len(dbscan.labels_),decimals=5)} %') #Percentage of outliers 
@@ -219,7 +219,7 @@ plt.xlabel("Epsilon Value")
 
     Text(0.5, 0, 'Epsilon Value')
 
-> ![png](output_28_1.png)
+> ![png](./imgs/output_28_1.png)
 
 ```python
 Std_Vis_Plot()
@@ -232,7 +232,7 @@ plt.xlim(0,1)
 
     (0.0, 1.0)
 
-> ![png](output_29_1.png)
+> ![png](./imgs/output_29_1.png)
 
 ### Do we want to think in terms of percentage targeting instead?
 
@@ -251,7 +251,7 @@ plt.axhline(y=1, color = 'r',alpha=0.3)
 
     <matplotlib.lines.Line2D at 0x26093c1de48>
 
-![png](output_31_1.png)
+![png](./imgs/output_31_1.png)
 
 ```python
 # How to find a good epsilon?
@@ -260,7 +260,7 @@ dbscan = DBSCAN(eps=0.4)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_32_0.png)
+![png](./imgs/output_32_0.png)
 
 ### Do we want to think in terms of number of outliers targeting instead?
 
@@ -278,7 +278,7 @@ plt.hlines(y=3,xmin=0,xmax=10,colors='red',ls='--')
 
     <matplotlib.collections.LineCollection at 0x26092a4b848>
 
-![png](output_34_1.png)
+![png](./imgs/output_34_1.png)
 
 ```python
 # How to find a good epsilon?
@@ -287,7 +287,7 @@ dbscan = DBSCAN(eps=0.75)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_35_0.png)
+![png](./imgs/output_35_0.png)
 
 ## Minimum Samples
 
@@ -328,7 +328,7 @@ plt.xlabel("Minimum Number of Samples")
 
     Text(0.5, 0, 'Minimum Number of Samples')
 
-![png](output_39_1.png)
+![png](./imgs/output_39_1.png)
 
 ```python
 Std_Vis_Plot()
@@ -337,7 +337,7 @@ dbscan = DBSCAN(min_samples=2*num_dim)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_40_0.png)
+![png](./imgs/output_40_0.png)
 
 ```python
 Std_Vis_Plot()
@@ -346,7 +346,7 @@ dbscan = DBSCAN(eps=0.75,min_samples=2*num_dim)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_41_0.png)
+![png](./imgs/output_41_0.png)
 
 ```python
 Std_Vis_Plot()
@@ -354,7 +354,7 @@ dbscan = DBSCAN(min_samples=1)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_42_0.png)
+![png](./imgs/output_42_0.png)
 
 ```python
 Std_Vis_Plot()
@@ -362,6 +362,6 @@ dbscan = DBSCAN(eps=0.75,min_samples=1)
 display_categories(dbscan,two_blobs_outliers)
 ```
 
-![png](output_43_0.png)
+![png](./imgs/output_43_0.png)
 
 ----
